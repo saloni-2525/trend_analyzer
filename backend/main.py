@@ -2,13 +2,13 @@
 from datetime import datetime
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from .db import get_db, get_results_for_keyword
-from .reddit_api import fetch_reddit_data
-from .twitter_api import fetch_twitter_data
-from .news_api import fetch_news_data
-from .sentiment import analyze_sentiment
-from .summary_gen import generate_summary, generate_overall_summary
-from .word_cloud import router as wordcloud_router
+from db import get_db, get_results_for_keyword
+from reddit_api import fetch_reddit_data
+from twitter_api import fetch_twitter_data
+from news_api import fetch_news_data
+from sentiment import analyze_sentiment
+from summary_gen import generate_summary, generate_overall_summary
+from word_cloud import router as wordcloud_router
 
 app = FastAPI(title="Trend Analyzer API")
 app.include_router(wordcloud_router)
