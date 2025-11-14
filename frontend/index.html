@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trend Analyzer Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="gradient-header">
+      <h1 class="title">
+        <i class="fa-solid fa-chart-line"></i> Trend Analyzer
+      </h1>
+      <div class="search-container">
+        <input type="text" id="keyword" placeholder="Enter a keyword..." />
+        <button id="searchBtn">
+          <i class="fa-solid fa-magnifying-glass"></i> Analyze
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="summary-section" class="gradient-card hidden">
+        <h2><i class="fa-solid fa-info-circle"></i> Overall Summary</h2>
+        <div class="summary-card">
+          <p id="overall-summary">Loading summary...</p>
+        </div>
+      </section>
+
+      <section id="charts" class="gradient-card hidden">
+        <h2><i class="fa-solid fa-chart-pie"></i> Trend Insights</h2>
+        <div class="chart-container">
+          <canvas id="pieChart"></canvas>
+          <canvas id="sentimentChart"></canvas>
+          <!-- <canvas id="radarChart"></canvas>
+          <canvas id="sourceBarChart"></canvas> -->
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
